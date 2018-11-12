@@ -1,6 +1,6 @@
 digraph G {
     rankdir=LR;
-    node [fontname="Bookman", fontsize=12];
+    node [fontname="Bookman; Helvetica", fontsize=12];
     prod1 [shape=plaintext, label=<
     <table border="0" cellborder="1">
     <tr>

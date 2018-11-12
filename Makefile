@@ -1,4 +1,4 @@
-all: dataflow collate
+all: dataflow collate juxtapose
 
 dataflow:
 	dot -Tsvg cloud_free.dot -o cloud_free.svg

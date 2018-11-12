@@ -1,5 +1,5 @@
 digraph G {
-    node[fontname="Bookman", fontsize=12];
+    node[fontname="Bookman; Helvetica", fontsize=12];
     cloud_free_ls_nbar [shape=plaintext];
     cloud_free_ls8_nbar [shape=plaintext];
     cloud_free_ls7_nbar [shape=plaintext];
