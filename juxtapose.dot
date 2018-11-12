@@ -1,0 +1,61 @@
+digraph G {
+    rankdir=LR;
+    node [fontname="Bookman", fontsize=12];
+    prod1 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Mon</b></td>
+    <td bgcolor="darkseagreen">red</td>
+    <td bgcolor="darkseagreen">green</td>
+    <td bgcolor="darkseagreen">blue</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Tue</b></td>
+    <td>red</td>
+    <td>green</td>
+    <td>blue</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Wed</b></td>
+    <td bgcolor="burlywood">red</td>
+    <td bgcolor="burlywood">green</td>
+    <td bgcolor="burlywood">blue</td>
+    </tr>
+    </table>
+    >];
+    prod2 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Mon</b></td>
+    <td bgcolor="darkseagreen">pixelquality</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Wed</b></td>
+    <td bgcolor="burlywood">pixelquality</td>
+    </tr>
+    </table>
+    >];
+    juxtapose [shape=box, style=filled, color="lightgray", height=0.2];
+    prod1 -> juxtapose;
+    prod2 -> juxtapose;
+    prod12 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Mon</b></td>
+    <td bgcolor="darkseagreen">red</td>
+    <td bgcolor="darkseagreen">green</td>
+    <td bgcolor="darkseagreen">blue</td>
+    <td bgcolor="darkseagreen">pixelquality</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Wed</b></td>
+    <td bgcolor="burlywood">red</td>
+    <td bgcolor="burlywood">green</td>
+    <td bgcolor="burlywood">blue</td>
+    <td bgcolor="burlywood">pixelquality</td>
+    </tr>
+    </table>
+    >];
+    juxtapose -> prod12;
+}
+

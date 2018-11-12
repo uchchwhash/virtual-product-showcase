@@ -1,0 +1,45 @@
+digraph G {
+    rankdir=LR;
+    node [fontname="Bookman", fontsize=12];
+    prod1 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Mon</b></td><td bgcolor="darkseagreen">dataset-1</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Wed</b></td><td bgcolor="darkseagreen">dataset-2</td>
+    </tr>
+    </table>
+    >];
+    prod2 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Tue</b></td><td>dataset-3</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Thu</b></td><td>dataset-4</td>
+    </tr>
+    </table>
+    >];
+    collate [shape=box, style=filled, color="lightgray", height=0.2];
+    prod1 -> collate;
+    prod2 -> collate;
+    prod12 [shape=plaintext, label=<
+    <table border="0" cellborder="1">
+    <tr>
+    <td bgcolor="lightgray"><b>Mon</b></td><td bgcolor="darkseagreen">dataset-1</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Tue</b></td><td>dataset-3</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Wed</b></td><td bgcolor="darkseagreen">dataset-2</td>
+    </tr>
+    <tr>
+    <td bgcolor="lightgray"><b>Thu</b></td><td>dataset-4</td>
+    </tr>
+    </table>
+    >];
+    collate -> prod12;
+}
+
