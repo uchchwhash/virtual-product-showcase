@@ -1,0 +1,39 @@
+digraph G {
+    node[fontname="Bookman", fontsize=12];
+    cloud_free_ls_nbar [shape=plaintext];
+    cloud_free_ls8_nbar [shape=plaintext];
+    cloud_free_ls7_nbar [shape=plaintext];
+    collate [shape=box, style=filled, color="lightgray", height=0.2];
+    collate -> cloud_free_ls_nbar;
+    cloud_free_ls8_nbar -> collate;
+    cloud_free_ls7_nbar -> collate;
+    trans1 [label="transform: apply_mask", shape=box, style=filled, color="lightgray", height=0.2];
+    trans2 [label="transform: apply_mask", shape=box, style=filled, color="lightgray", height=0.2];
+    trans1 -> cloud_free_ls8_nbar;
+    trans2 -> cloud_free_ls7_nbar;
+    jux1 [label="(ls8_nbar_albers, ls8_cloud_mask)", shape=plaintext];
+    jux2 [label="(ls7_nbar_albers, ls7_cloud_mask)", shape=plaintext];
+    jux1 -> trans1;
+    jux2 -> trans2;
+    jux_box_1 [label="juxtapose", shape=box, style=filled, color="lightgray", height=0.2];
+    jux_box_2 [label="juxtapose", shape=box, style=filled, color="lightgray", height=0.2];
+    jux_box_1 -> jux1;
+    jux_box_2 -> jux2;
+    { rank="same"; ls8_nbar_albers; ls7_nbar_albers; ls8_pq_albers; ls7_pq_albers; }
+    ls8_nbar_albers [shape=plaintext];
+    ls7_nbar_albers [shape=plaintext];
+    ls8_nbar_albers -> jux_box_1;
+    ls7_nbar_albers -> jux_box_2;
+    trans3 [label="transform: make_mask", shape=box, style=filled, color="lightgray", height=0.2];
+    trans4 [label="transform: make_mask", shape=box, style=filled, color="lightgray", height=0.2];
+    ls8_cloud_mask [shape=plaintext];
+    ls7_cloud_mask [shape=plaintext];
+    trans3 -> ls8_cloud_mask;
+    ls8_cloud_mask -> jux_box_1;
+    trans4 -> ls7_cloud_mask;
+    ls7_cloud_mask -> jux_box_2;
+    ls8_pq_albers [shape=plaintext];
+    ls7_pq_albers [shape=plaintext];
+    ls8_pq_albers -> trans3;
+    ls7_pq_albers -> trans4;
+}
