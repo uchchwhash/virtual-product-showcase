@@ -1,11 +1,11 @@
 digraph G {
     node[fontname="Bookman; Helvetica", fontsize=12];
     search_terms [shape=plaintext];
-    QueryResult [shape=plaintext];
-    DatasetPile [shape=plaintext];
+    VirtualDatasetBag [shape=plaintext];
+    VirtualDatasetBox [shape=plaintext];
     data [label="xarray.Dataset", shape=plaintext];
     query [shape=box, style=filled, color="goldenrod", height=0.2];
     group [shape=box, style=filled, color="goldenrod", height=0.2];
     fetch [shape=box, style=filled, color="goldenrod", height=0.2];
-    search_terms -> query -> QueryResult -> group -> DatasetPile -> fetch -> data;
+    search_terms -> query -> VirtualDatasetBag -> group -> VirtualDatasetBox -> fetch -> data;
 }
